@@ -1,0 +1,8 @@
+@startuml
+:Cliente:
+Cliente --> (Realizar Operaciones)
+(Realizar Operaciones) <.. (Hacer trasferencia):<<Extend>>
+(Realizar Operaciones) <.. (Acceder a operacion en bolsa): <<Extend>>
+(Hacer trasferencia) <.. (Notificar): <<Extend>>
+(Agente) <.. (Notificar): <<Include>>
+@enduml

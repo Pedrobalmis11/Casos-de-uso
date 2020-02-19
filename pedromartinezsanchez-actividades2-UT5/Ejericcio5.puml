@@ -1,0 +1,30 @@
+@startuml
+
+:Vendedor:
+Vendedor -- (Gestiona inmuebles)
+(Gestiona inmuebles) <.. (Añadir datos de inmuebles): <<Extend>>
+(Añadir datos de inmuebles) ..> (Buscar inmueble): <<Include>>
+(Gestiona inmuebles) <.. (Listar datos del inmueble): <<Extend>>
+(Gestiona inmuebles) <.. (Buscar inmueble): <<Extend>>
+Vendedor -- (Realiza ventas)
+(Realiza ventas) <|-- (Ventas cerradas)
+(Realiza ventas) <|-- (Ventas en negociacion)
+(Realiza ventas) <.. (Selecionar un agente) : <<Extend>>
+Vendedor -- (Realizar baja)
+Vendedor -- (Consultar el estado de una venta)
+
+:Comprador:
+Comprador -- (Realilza compras inmueble)
+Comprador -- (Realizar oferta por inmueble)
+(Realizar oferta por inmueble) ..> (Notificar al vendedor): <<Include>>
+(Notificar al vendedor) -- Vendedor
+(Vendedor) -- (Contraoferta)
+(Contraoferta) ..> (Notificar al comprador): <<Include>>
+(Notificar al comprador) -- Comprador
+
+Comprador -- (Llegan a un acuerdo)
+Vendedor -- (Llegan a un acuerdo)
+(Llegan a un acuerdo) ..> (Registro de venta): <<Include>>
+(Llegan a un acuerdo) <.. (Comprador pide prestamo): <<Extend>>
+(Comprador pide prestamo) ..> (Contacto con entidad bancaria): <<Include>>
+@enduml

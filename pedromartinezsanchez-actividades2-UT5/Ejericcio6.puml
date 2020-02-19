@@ -1,0 +1,17 @@
+@startuml
+
+:Cliente:
+Cliente -- (Login)
+(Login) <.. (Realizar un pedido): <<Extend>>
+(Login) <.. (Devolver producto): <<Extend>>
+(Login) <.. (Cancelar pedido): <<Extend>>
+(Login) <.. (Consultar pedido): <<Extend>>
+(Realizar un pedido) <.. (Mostrar información de producto): <<Extend>>
+(Mostrar información de producto) ..> (Solicitud a inventario): <<Include>>
+(Devolver producto) ..> (Actualizar inventario): <<Include>>
+(Actualizar inventario) ..> (Actualizar contabilidad): <<Include>>
+(Login) <.. (Registrar reclamaciones): <<Extend>>
+(Registrar reclamaciones) ..> (Informe reclamaciones): <<Include>>
+(Login) <.. (Consultar recamacion): <<Extend>>
+(Informe reclamaciones) ..> (Consultar recamacion): <<Include>>
+@enduml

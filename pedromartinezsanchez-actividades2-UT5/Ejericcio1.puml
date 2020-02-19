@@ -1,0 +1,8 @@
+@startuml
+
+:Usuario:
+Usuario --> (Agenda)
+Agenda ..> (Llamadas\nde teléfono): <<Extend>>
+Agenda ..> (Videoconferencia): <<Extend>>
+Agenda ..> (Escribir \nmensajes cortos): <<Extend>>
+@enduml

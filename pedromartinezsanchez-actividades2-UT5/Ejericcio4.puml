@@ -1,0 +1,13 @@
+@startuml
+:Usuario:
+Usuario -- (Acceder)
+(Acceder) <.. (Registrarse): <<Extend>>
+Usuario -- (Ver los cursos en los que esta matriculado)
+Usuario -- (Configurar entorno)
+Usuario -- (Consultar cursos en los que esta matriculado)
+Usuario -- (Públicar en el foro)
+Usuario -- (Descargar material web)
+Usuario -- (Entregar resultados)
+(Entregar resultados) <|-- (Subir archivos)
+(Entregar resultados) <|-- (Introducir texto)
+@enduml
